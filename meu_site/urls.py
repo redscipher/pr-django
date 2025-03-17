@@ -16,8 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', include('blog.urls'))      #adiciona url da pagina /home
+    path('home/', include('blog.urls')),      #adiciona url da pagina /home
+    path('bemvindo/', views.ClsExibeBemVindo.async_views, name='bemvindo') 
+    #path('bemvindo/', views.ClsExibeBemVindo.bemvindo, name='bemvindo'),
 ]
